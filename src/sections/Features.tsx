@@ -48,7 +48,7 @@ export default function Features() {
                 </div>
                 <h2 className="text-6xl font-medium text-center mt-6 max-w-2xl m-auto text-gray-900">
                     Everything you need for{" "}
-                    <span className="text-green-600">WhatsApp Business</span>
+                    <span className="text-cyan-600">WhatsApp Business</span>
                 </h2>
                 <motion.div
                     variants={parentVariants}
@@ -68,7 +68,7 @@ export default function Features() {
                                 className="md:col-span-2 lg:col-span-1"
                             >
                                 <div className="aspect-video flex items-center justify-center">
-                                    <Avatar className="z-40 border-green-500">
+                                    <Avatar className="z-40 border-cyan-500">
                                         <Image
                                             src={avatar1}
                                             alt="Avatar 1"
@@ -111,9 +111,9 @@ export default function Features() {
                             >
                                 <div className="aspect-video flex items-center justify-center">
                                     <div className="text-center">
-                                        <BarChart3 size={60} className="text-green-500 mx-auto mb-4" />
+                                        <BarChart3 size={60} className="text-cyan-500 mx-auto mb-4" />
                                         <p className="text-2xl font-bold text-gray-900">
-                                            <span className="text-green-600">94%</span> Response Rate
+                                            <span className="text-cyan-600">94%</span> Response Rate
                                         </p>
                                     </div>
                                 </div>
@@ -133,7 +133,7 @@ export default function Features() {
                             >
                                 <div className="aspect-video flex justify-center items-center">
                                     <div className="text-center">
-                                        <Bot size={60} className="text-green-500 mx-auto mb-4 group-hover:animate-pulse" />
+                                        <Bot size={60} className="text-cyan-500 mx-auto mb-4 group-hover:animate-pulse" />
                                         <p className="text-lg font-medium text-gray-700">
                                             Always Available
                                         </p>
@@ -150,7 +150,7 @@ export default function Features() {
                             className="bg-white border border-gray-200 inline-flex px-3 md:px-5 md:py-2 py-1.5 rounded-2xl gap-3 items-center hover:scale-105 transition duration-500 group shadow-sm"
                             key={feature}
                         >
-                            <span className="bg-green-500 text-white size-5 rounded-full inline-flex items-center justify-center text-xl group-hover:rotate-45 transition duration-500">
+                            <span className="bg-cyan-500 text-white size-5 rounded-full inline-flex items-center justify-center text-xl group-hover:rotate-45 transition duration-500">
                                 &#10038;
                             </span>
                             <span className="font-medium md:text-lg text-gray-700">

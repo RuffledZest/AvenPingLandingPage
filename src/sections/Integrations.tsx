@@ -51,7 +51,7 @@ export default function Integrations() {
                         <Tag>Integrations</Tag>
                         <h2 className="text-6xl font-medium mt-6 text-gray-900">
                             Connects with your{" "}
-                            <span className="text-green-600">favorite tools</span>
+                            <span className="text-cyan-600">favorite tools</span>
                         </h2>
 
                         <p className="text-gray-600 mt-4 text-lg">

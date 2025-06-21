@@ -25,7 +25,7 @@ const logos = [
 
 export default function LogoTicker() {
     return (
-        <section className="py-24 overflow-x-clip bg-white">
+        <section className="py-24 lg:pt-[35rem] xl:pt-[10rem]   overflow-x-clip bg-white">
             <div className="container">
                 <h3 className="text-center text-gray-600 text-xl">
                     Trusted by leading businesses worldwide
@@ -49,7 +49,8 @@ export default function LogoTicker() {
                                         src={each.image}
                                         alt={each.name}
                                         key={each.name}
-                                        className="opacity-60 invert"
+                                        className="opacity-60 invert
+                                        "
                                     />
                                 ))}
                             </React.Fragment>

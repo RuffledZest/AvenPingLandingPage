@@ -4,7 +4,7 @@ import { cva } from "class-variance-authority";
 const classess = cva("border h-12 rounded-full px-6 font-medium transition-all duration-200", {
     variants: {
         variant: {
-            primary: "bg-green-500 text-white border-green-500 hover:bg-green-600 hover:border-green-600",
+            primary: "bg-cyan-500 text-white border-cyan-500 hover:bg-cyan-600 hover:border-cyan-600",
             secondary: "border-gray-300 text-gray-700 bg-white hover:bg-gray-50",
         },
         size: {

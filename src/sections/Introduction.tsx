@@ -51,7 +51,7 @@ export default function Introduction() {
                                 >{`${word} `}</span>
                             ))}
                         </span>
-                        <span className="text-green-600 block">
+                        <span className="text-cyan-600 block">
                             That&apos;s why we built AvenPing.
                         </span>
                     </div>

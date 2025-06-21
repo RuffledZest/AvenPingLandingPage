@@ -40,7 +40,7 @@ export default function Faqs() {
                 </div>
                 <h2 className="text-6xl font-medium mt-6 text-center max-w-xl mx-auto text-gray-900">
                     Questions? We&apos;ve got{" "}
-                    <span className="text-green-600">answers</span>
+                    <span className="text-cyan-600">answers</span>
                 </h2>
 
                 <div className="mt-12 flex flex-col gap-6 max-w-xl mx-auto">
@@ -57,7 +57,7 @@ export default function Faqs() {
                                 <Plus
                                     size={30}
                                     className={twMerge(
-                                        "text-green-600 flex-shrink-0 transition duration-300",
+                                        "text-cyan-600 flex-shrink-0 transition duration-300",
                                         selectedIndex === faqIndex &&
                                             "rotate-45"
                                     )}

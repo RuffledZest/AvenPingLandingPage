@@ -34,10 +34,10 @@ export default function WhatsAppSetup() {
 
     if (step === 1) {
         return (
-            <div className="min-h-screen bg-gradient-to-br from-green-50 to-white flex items-center justify-center p-4">
+            <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-white flex items-center justify-center p-4">
                 <div className="w-full max-w-md">
                     <div className="text-center mb-8">
-                        <div className="text-3xl font-bold text-green-600 mb-4">
+                        <div className="text-3xl font-bold text-cyan-600 mb-4">
                             AvenPing
                         </div>
                         <h1 className="text-2xl font-semibold text-gray-900 mb-2">
@@ -50,8 +50,8 @@ export default function WhatsAppSetup() {
 
                     <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
                         <div className="text-center mb-8">
-                            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <MessageCircle size={40} className="text-green-600" />
+                            <div className="w-20 h-20 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <MessageCircle size={40} className="text-cyan-600" />
                             </div>
                             <h2 className="text-xl font-semibold text-gray-900 mb-2">
                                 WhatsApp Business API
@@ -90,10 +90,10 @@ export default function WhatsAppSetup() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 to-white flex items-center justify-center p-4">
+        <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-white flex items-center justify-center p-4">
             <div className="w-full max-w-lg">
                 <div className="text-center mb-8">
-                    <div className="text-3xl font-bold text-green-600 mb-4">
+                    <div className="text-3xl font-bold text-cyan-600 mb-4">
                         AvenPing
                     </div>
                     <h1 className="text-2xl font-semibold text-gray-900 mb-2">
@@ -114,7 +114,7 @@ export default function WhatsAppSetup() {
                                 type="text"
                                 value={profileData.displayName}
                                 onChange={(e) => setProfileData(prev => ({ ...prev, displayName: e.target.value }))}
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors"
                                 placeholder="Your business name"
                             />
                         </div>
@@ -126,7 +126,7 @@ export default function WhatsAppSetup() {
                             <textarea
                                 value={profileData.description}
                                 onChange={(e) => setProfileData(prev => ({ ...prev, description: e.target.value }))}
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors"
                                 placeholder="Brief description of your business"
                                 rows={3}
                             />
@@ -136,7 +136,7 @@ export default function WhatsAppSetup() {
                             <label className="block text-sm font-medium text-gray-700 mb-2">
                                 Profile Picture
                             </label>
-                            <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-green-400 transition-colors">
+                            <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-cyan-400 transition-colors">
                                 <Upload size={40} className="mx-auto text-gray-400 mb-2" />
                                 <p className="text-sm text-gray-600">
                                     Click to upload or drag and drop
@@ -154,7 +154,7 @@ export default function WhatsAppSetup() {
                             <label className="block text-sm font-medium text-gray-700 mb-2">
                                 Header Picture
                             </label>
-                            <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-green-400 transition-colors">
+                            <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-cyan-400 transition-colors">
                                 <Upload size={40} className="mx-auto text-gray-400 mb-2" />
                                 <p className="text-sm text-gray-600">
                                     Click to upload or drag and drop

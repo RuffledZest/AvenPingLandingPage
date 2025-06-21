@@ -41,10 +41,10 @@ export default function CallToAction() {
                 >
                     {Array.from({ length: 10 }).map((_, index) => (
                         <div key={index} className="flex items-center gap-16">
-                            <span className="text-green-600 text-7xl">
+                            <span className="text-cyan-600 text-7xl">
                                 &#10038;
                             </span>
-                            <span className={twMerge(slowDownAnimation && "text-green-600")}>Start for free</span>
+                            <span className={twMerge(slowDownAnimation && "text-cyan-600")}>Start for free</span>
                         </div>
                     ))}
                 </motion.div>

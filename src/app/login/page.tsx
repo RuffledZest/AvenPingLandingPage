@@ -25,10 +25,10 @@ export default function Login() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 to-white flex items-center justify-center p-4">
+        <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-white flex items-center justify-center p-4">
             <div className="w-full max-w-md">
                 <div className="text-center mb-8">
-                    <Link href="/" className="text-3xl font-bold text-green-600">
+                    <Link href="/" className="text-3xl font-bold text-cyan-600">
                         AvenPing
                     </Link>
                     <p className="text-gray-600 mt-2">Welcome back to your WhatsApp business hub</p>
@@ -55,7 +55,7 @@ export default function Login() {
                                 id="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors"
                                 placeholder="Enter your email or username"
                                 required
                             />
@@ -71,7 +71,7 @@ export default function Login() {
                                     id="password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors pr-12"
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors pr-12"
                                     placeholder="Enter your password"
                                     required
                                 />
@@ -87,10 +87,10 @@ export default function Login() {
 
                         <div className="flex items-center justify-between">
                             <label className="flex items-center">
-                                <input type="checkbox" className="rounded border-gray-300 text-green-600 focus:ring-green-500" />
+                                <input type="checkbox" className="rounded border-gray-300 text-cyan-600 focus:ring-cyan-500" />
                                 <span className="ml-2 text-sm text-gray-600">Remember me</span>
                             </label>
-                            <a href="#" className="text-sm text-green-600 hover:text-green-700">
+                            <a href="#" className="text-sm text-cyan-600 hover:text-cyan-700">
                                 Forgot password?
                             </a>
                         </div>
@@ -103,7 +103,7 @@ export default function Login() {
                     <div className="mt-6 text-center">
                         <p className="text-gray-600">
                             Don't have an account?{" "}
-                            <Link href="/signup" className="text-green-600 hover:text-green-700 font-medium">
+                            <Link href="/signup" className="text-cyan-600 hover:text-cyan-700 font-medium">
                                 Sign up
                             </Link>
                         </p>

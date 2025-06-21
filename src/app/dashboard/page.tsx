@@ -8,12 +8,12 @@ export default function Dashboard() {
             <div className="bg-white shadow-sm border-b">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center py-4">
-                        <div className="text-2xl font-bold text-green-600">
+                        <div className="text-2xl font-bold text-cyan-600">
                             AvenPing
                         </div>
                         <div className="flex items-center gap-4">
                             <span className="text-gray-700">Welcome back!</span>
-                            <div className="w-8 h-8 bg-green-500 rounded-full"></div>
+                            <div className="w-8 h-8 bg-cyan-500 rounded-full"></div>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@ export default function Dashboard() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                     <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
                         <div className="flex items-center">
-                            <MessageCircle className="text-green-600" size={24} />
+                            <MessageCircle className="text-cyan-600" size={24} />
                             <div className="ml-4">
                                 <p className="text-sm font-medium text-gray-600">Total Messages</p>
                                 <p className="text-2xl font-bold text-gray-900">1,234</p>
@@ -88,7 +88,7 @@ export default function Dashboard() {
                         <h2 className="text-xl font-semibold text-gray-900 mb-4">Quick Actions</h2>
                         <div className="grid grid-cols-2 gap-4">
                             <button className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 text-left">
-                                <MessageCircle className="text-green-600 mb-2" size={24} />
+                                <MessageCircle className="text-cyan-600 mb-2" size={24} />
                                 <p className="font-medium text-gray-900">New Broadcast</p>
                             </button>
                             <button className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 text-left">

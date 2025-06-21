@@ -81,7 +81,7 @@ export default function Signup() {
                                 type="text"
                                 value={formData.name}
                                 onChange={(e) => updateFormData("name", e.target.value)}
-                                className="w-full px-4 py-4 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                                className="w-full px-4 py-4 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors"
                                 placeholder="Enter your full name"
                                 autoFocus
                             />
@@ -105,7 +105,7 @@ export default function Signup() {
                                     onClick={() => updateFormData("industry", industry)}
                                     className={`p-4 text-left border rounded-lg transition-colors ${
                                         formData.industry === industry
-                                            ? "border-green-500 bg-green-50 text-green-700"
+                                            ? "border-cyan-500 bg-cyan-50 text-cyan-700"
                                             : "border-gray-300 hover:border-gray-400"
                                     }`}
                                 >
@@ -132,7 +132,7 @@ export default function Signup() {
                                     onClick={() => updateFormData("clientSize", size)}
                                     className={`p-4 text-left border rounded-lg transition-colors ${
                                         formData.clientSize === size
-                                            ? "border-green-500 bg-green-50 text-green-700"
+                                            ? "border-cyan-500 bg-cyan-50 text-cyan-700"
                                             : "border-gray-300 hover:border-gray-400"
                                     }`}
                                 >
@@ -157,7 +157,7 @@ export default function Signup() {
                                 type="email"
                                 value={formData.email}
                                 onChange={(e) => updateFormData("email", e.target.value)}
-                                className="w-full px-4 py-4 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                                className="w-full px-4 py-4 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors"
                                 placeholder="Enter your email address"
                                 autoFocus
                             />
@@ -179,7 +179,7 @@ export default function Signup() {
                                 type="password"
                                 value={formData.password}
                                 onChange={(e) => updateFormData("password", e.target.value)}
-                                className="w-full px-4 py-4 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                                className="w-full px-4 py-4 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors"
                                 placeholder="Enter a strong password"
                                 autoFocus
                             />
@@ -196,10 +196,10 @@ export default function Signup() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 to-white flex items-center justify-center p-4">
+        <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-white flex items-center justify-center p-4">
             <div className="w-full max-w-lg">
                 <div className="text-center mb-8">
-                    <Link href="/" className="text-3xl font-bold text-green-600">
+                    <Link href="/" className="text-3xl font-bold text-cyan-600">
                         AvenPing
                     </Link>
                     <div className="flex justify-center mt-4">
@@ -208,7 +208,7 @@ export default function Signup() {
                                 <div
                                     key={step}
                                     className={`w-3 h-3 rounded-full ${
-                                        step <= currentStep ? "bg-green-500" : "bg-gray-300"
+                                        step <= currentStep ? "bg-cyan-500" : "bg-gray-300"
                                     }`}
                                 />
                             ))}
@@ -249,7 +249,7 @@ export default function Signup() {
                 <div className="mt-6 text-center">
                     <p className="text-gray-600">
                         Already have an account?{" "}
-                        <Link href="/login" className="text-green-600 hover:text-green-700 font-medium">
+                        <Link href="/login" className="text-cyan-600 hover:text-cyan-700 font-medium">
                             Sign in
                         </Link>
                     </p>

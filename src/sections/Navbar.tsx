@@ -20,19 +20,23 @@ export default function Navbar() {
 
     return (
         <>
-            <section className="py-4 lg:py-8 fixed w-full top-0 z-50 ">
+
+       
+            <section className="py-4 lg:py-8 fixed w-full top-0 z-50
+                
+              ">
                 <div className="container max-w-5xl">
-                    <div className="border border-gray-200 rounded-[27px] lg:rounded-full bg-white/90 backdrop-blur shadow-sm">
+                    <div className="border border-gray-200 rounded-[27px] lg:rounded-full bg-white/70 backdrop-blur shadow-sm">
                         <figure className="grid grid-cols-2 lg:grid-cols-3  py-2 lg:px-2 px-4  items-center ">
                             <div>
-                                <div className="text-2xl font-bold text-green-600 px-5">
+                                <div className="text-2xl font-bold text-cyan-600 px-5">
                                     AvenPing
                                 </div>
                             </div>
                             <div className="hidden lg:flex justify-center items-center ">
                                 <nav className="flex gap-6 font-medium text-gray-700">
                                     {navLinks.map((each) => (
-                                        <a href={each.href} key={each.href} className="hover:text-green-600 transition-colors">
+                                        <a href={each.href} key={each.href} className="hover:text-cyan-600 transition-colors">
                                             {each.label}
                                         </a>
                                     ))}
@@ -101,7 +105,7 @@ export default function Navbar() {
                                 >
                                     <div className="flex flex-col items-center gap-4 py-4">
                                         {navLinks.map((link) => (
-                                            <a key={link.href} href={link.href} className="text-gray-700 hover:text-green-600 transition-colors">
+                                            <a key={link.href} href={link.href} className="text-gray-700 hover:text-cyan-600 transition-colors">
                                                 {link.label}
                                             </a>
                                         ))}

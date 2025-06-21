@@ -7,7 +7,7 @@ const Avatar = (props: HTMLAttributes<HTMLDivElement>) => {
     return (
         <div
             className={twMerge(
-                "size-20 rounded-full overflow-hidden border-4 border-green-500 p-1 bg-white",
+                "size-20 rounded-full overflow-hidden border-4 border-cyan-500 p-1 bg-white",
                 className
             )}
             {...rest}

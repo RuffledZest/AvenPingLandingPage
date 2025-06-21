@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="container">
                 <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-6">
                     <div>
-                        <div className="text-2xl font-bold text-green-600">
+                        <div className="text-2xl font-bold text-cyan-600">
                             AvenPing
                         </div>
                     </div>
@@ -22,7 +22,7 @@ export default function Footer() {
                                 <a
                                     key={link.href}
                                     href={link.href}
-                                    className="text-gray-600 text-sm hover:text-green-600 transition-colors"
+                                    className="text-gray-600 text-sm hover:text-cyan-600 transition-colors"
                                 >
                                     {link.label}
                                 </a>
