@@ -1,11 +1,11 @@
 import React, { ButtonHTMLAttributes, HTMLAttributes } from "react";
 import { cva } from "class-variance-authority";
 
-const classess = cva("border h-12 rounded-full px-6 font-medium", {
+const classess = cva("border h-12 rounded-full px-6 font-medium transition-all duration-200", {
     variants: {
         variant: {
-            primary: "bg-lime-400 text-neutral-950 border-line-400",
-            secondary: "border-white text-white bg-transparent",
+            primary: "bg-green-500 text-white border-green-500 hover:bg-green-600 hover:border-green-600",
+            secondary: "border-gray-300 text-gray-700 bg-white hover:bg-gray-50",
         },
         size: {
             sm: "h-10",

@@ -25,10 +25,10 @@ const logos = [
 
 export default function LogoTicker() {
     return (
-        <section className="py-24 overflow-x-clip">
+        <section className="py-24 overflow-x-clip bg-white">
             <div className="container">
-                <h3 className="text-center text-white/50 text-xl">
-                    Already chosen by these market leaders
+                <h3 className="text-center text-gray-600 text-xl">
+                    Trusted by leading businesses worldwide
                 </h3>
                 <div className="flex overflow-hidden mt-12 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
                     <motion.div
@@ -40,7 +40,7 @@ export default function LogoTicker() {
                             ease: "linear",
                             repeat: Infinity,
                         }}
-                        className="flex gap-24 pr-24 "
+                        className="flex gap-24 pr-24"
                     >
                         {Array.from({ length: 2 }).map((_, i) => (
                             <React.Fragment key={i}>
@@ -49,6 +49,7 @@ export default function LogoTicker() {
                                         src={each.image}
                                         alt={each.name}
                                         key={each.name}
+                                        className="opacity-60"
                                     />
                                 ))}
                             </React.Fragment>

@@ -6,6 +6,7 @@ import Image from "next/image";
 import Button from "@/components/Button";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 
 const navLinks = [
     { label: "Home", href: "#" },
@@ -21,19 +22,17 @@ export default function Navbar() {
         <>
             <section className="py-4 lg:py-8 fixed w-full top-0 z-50 ">
                 <div className="container max-w-5xl">
-                    <div className="border border-white/15 rounded-[27px] lg:rounded-full bg-neutral-950/70 backdrop-blur">
+                    <div className="border border-gray-200 rounded-[27px] lg:rounded-full bg-white/90 backdrop-blur shadow-sm">
                         <figure className="grid grid-cols-2 lg:grid-cols-3  py-2 lg:px-2 px-4  items-center ">
                             <div>
-                                <Image
-                                    src={logoImage}
-                                    alt="layer logo"
-                                    className="h-9 w-auto md:h-auto"
-                                />
+                                <div className="text-2xl font-bold text-green-600">
+                                    AvenPing
+                                </div>
                             </div>
                             <div className="hidden lg:flex justify-center items-center ">
-                                <nav className="flex gap-6 font-medium ">
+                                <nav className="flex gap-6 font-medium text-gray-700">
                                     {navLinks.map((each) => (
-                                        <a href={each.href} key={each.href}>
+                                        <a href={each.href} key={each.href} className="hover:text-green-600 transition-colors">
                                             {each.label}
                                         </a>
                                     ))}
@@ -54,7 +53,7 @@ export default function Navbar() {
                                             transition={{ duration: 0.3 }}
                                         >
                                             <Menu
-                                                className="text-white"
+                                                className="text-gray-700"
                                                 size={30}
                                             />
                                         </motion.div>
@@ -67,24 +66,28 @@ export default function Navbar() {
                                             transition={{ duration: 0.3 }}
                                         >
                                             <X
-                                                className="text-white"
+                                                className="text-gray-700"
                                                 size={30}
                                             />
                                         </motion.div>
                                     )}
                                 </button>
-                                <Button
-                                    variant="secondary"
-                                    className="hidden lg:inline-flex items-center"
-                                >
-                                    Login
-                                </Button>
-                                <Button
-                                    variant="primary"
-                                    className="hidden lg:inline-flex items-center"
-                                >
-                                    Signup
-                                </Button>
+                                <Link href="/login">
+                                    <Button
+                                        variant="secondary"
+                                        className="hidden lg:inline-flex items-center"
+                                    >
+                                        Login
+                                    </Button>
+                                </Link>
+                                <Link href="/signup">
+                                    <Button
+                                        variant="primary"
+                                        className="hidden lg:inline-flex items-center"
+                                    >
+                                        Get Started
+                                    </Button>
+                                </Link>
                             </div>
                         </figure>
 
@@ -98,22 +101,26 @@ export default function Navbar() {
                                 >
                                     <div className="flex flex-col items-center gap-4 py-4">
                                         {navLinks.map((link) => (
-                                            <a key={link.href} href={link.href}>
+                                            <a key={link.href} href={link.href} className="text-gray-700 hover:text-green-600 transition-colors">
                                                 {link.label}
                                             </a>
                                         ))}
-                                        <Button
-                                            className="w-3/4"
-                                            variant="secondary"
-                                        >
-                                            Log In
-                                        </Button>
-                                        <Button
-                                            className="w-3/4"
-                                            variant="primary"
-                                        >
-                                            Sign Up
-                                        </Button>
+                                        <Link href="/login" className="w-3/4">
+                                            <Button
+                                                className="w-full"
+                                                variant="secondary"
+                                            >
+                                                Log In
+                                            </Button>
+                                        </Link>
+                                        <Link href="/signup" className="w-3/4">
+                                            <Button
+                                                className="w-full"
+                                                variant="primary"
+                                            >
+                                                Get Started
+                                            </Button>
+                                        </Link>
                                     </div>
                                 </motion.figure>
                             )}

@@ -9,34 +9,34 @@ import IntegrationColumn from "@/components/IntegrationColumn";
 
 const integrations = [
     {
-        name: "Figma",
+        name: "Shopify",
         icon: figmaIcon,
-        description: "Figma is a collaborative interface design tool.",
+        description: "Connect your Shopify store with WhatsApp for seamless order management.",
     },
     {
-        name: "Notion",
+        name: "WooCommerce",
         icon: notionIcon,
-        description: "Notion is an all-in-one workspace for notes and docs.",
+        description: "Integrate WooCommerce to handle customer inquiries and orders via WhatsApp.",
     },
     {
         name: "Slack",
         icon: slackIcon,
-        description: "Slack is a powerful team communication platform.",
+        description: "Get WhatsApp notifications and manage conversations in Slack.",
     },
     {
-        name: "Relume",
+        name: "Zapier",
         icon: relumeIcon,
-        description: "Relume is a no-code website builder and design system.",
+        description: "Automate workflows by connecting AvenPing with 5000+ apps.",
     },
     {
-        name: "Framer",
+        name: "Google Sheets",
         icon: framerIcon,
-        description: "Framer is a professional website prototyping tool.",
+        description: "Export contacts and conversation data to Google Sheets automatically.",
     },
     {
-        name: "GitHub",
+        name: "CRM Systems",
         icon: githubIcon,
-        description: "GitHub is the leading platform for code collaboration.",
+        description: "Sync customer data with popular CRM platforms like HubSpot and Salesforce.",
     },
 ];
 
@@ -44,20 +44,18 @@ export type IntegrationsType = typeof integrations;
 
 export default function Integrations() {
     return (
-        <section className="py-24 overflow-hidden ">
+        <section className="py-24 overflow-hidden bg-white">
             <div className="container">
                 <div className="grid lg:grid-cols-2 items-center lg:gap-16">
                     <div>
-                        <Tag>Integration</Tag>
-                        <h2 className="text-6xl font-medium mt-6">
-                            Plays well with{" "}
-                            <span className="text-lime-400 ">others</span>
+                        <Tag>Integrations</Tag>
+                        <h2 className="text-6xl font-medium mt-6 text-gray-900">
+                            Connects with your{" "}
+                            <span className="text-green-600">favorite tools</span>
                         </h2>
 
-                        <p className="text-white/50 mt-4 text-lg ">
-                            Layers seamessly connects with your favourite tools
-                            and platforms. It's easy to plug into any workflow
-                            and collaborate platforms.
+                        <p className="text-gray-600 mt-4 text-lg">
+                            AvenPing seamlessly integrates with your existing business tools and platforms. Connect your e-commerce store, CRM, and productivity apps to create a unified workflow.
                         </p>
                     </div>
                     <div>

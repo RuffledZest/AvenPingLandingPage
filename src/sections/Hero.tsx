@@ -7,9 +7,7 @@ import Image from "next/image";
 import Pointer from "@/components/Pointer";
 import { motion, useAnimate } from "framer-motion";
 import { useEffect } from "react";
-import cursorImage from "@/assets/images/cursor-you.svg";
-
-
+import Link from "next/link";
 
 export default function Hero() {
     const [leftDesignScope, leftDesignAnimate] = useAnimate();
@@ -59,12 +57,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section
-            className="py-24 overflow-x-clip"
-            style={{
-                cursor: `url(${cursorImage.src}), auto`,
-            }}
-        >
+        <section className="py-24 overflow-x-clip bg-gradient-to-b from-green-50 to-white">
             <div className="container relative ">
                 <motion.div
                     ref={leftDesignScope}
@@ -75,8 +68,8 @@ export default function Hero() {
                     <Image
                         draggable={false}
                         src={designExample1}
-                        alt="design example 1"
-                        className="rounded-lg"
+                        alt="WhatsApp business example 1"
+                        className="rounded-lg shadow-lg"
                         style={{ maxWidth: "50%", height: "auto" }}
                     />
                 </motion.div>
@@ -85,7 +78,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 100, x: -200 }}
                     className="absolute top-96 left-56 hidden lg:block"
                 >
-                    <Pointer name="Andrea" />
+                    <Pointer name="Sarah" />
                 </motion.div>
 
                 <motion.div
@@ -97,8 +90,8 @@ export default function Hero() {
                     <Image
                         draggable={false}
                         src={designExample2}
-                        alt="design example 2"
-                        className="rounded-lg"
+                        alt="WhatsApp business example 2"
+                        className="rounded-lg shadow-lg"
                         style={{ maxWidth: "50%", height: "auto" }}
                     />
                 </motion.div>
@@ -107,35 +100,36 @@ export default function Hero() {
                     initial={{ opacity: 0, x: 275, y: 100 }}
                     className="absolute -top-4 right-80 hidden lg:block"
                 >
-                    <Pointer color="red" name="Brew" />
+                    <Pointer color="red" name="Mike" />
                 </motion.div>
 
                 <div className="flex justify-center">
-                    <div className="inline-flex py-1 px-3 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full text-neutral-950 font-semibold">
-                        ✨ $7.5M eed round raised
+                    <div className="inline-flex py-1 px-3 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full text-white font-semibold">
+                        🚀 Trusted by 10,000+ businesses
                     </div>
                 </div>
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium text-center mt-6 ">
-                    Impactful design, created effortlessly
+                <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium text-center mt-6 text-gray-900">
+                    WhatsApp Business, <span className="text-green-600">simplified</span>
                 </h1>
-                <p className="text-center text-xl text-white/50 mt-8 max-w-2xl mx-auto">
-                    Design tool shouldn't slow you down. Create, prototype, and
-                    test with ease.
+                <p className="text-center text-xl text-gray-600 mt-8 max-w-2xl mx-auto">
+                    Streamline your WhatsApp business communications with powerful automation, analytics, and customer management tools.
                 </p>
-                <form className="mx-auto flex border border-white/50 rounded-full p-2 mt-8 max-w-lg">
+                <form className="mx-auto flex border border-gray-300 rounded-full p-2 mt-8 max-w-lg bg-white shadow-sm">
                     <input
                         type="email"
                         placeholder="Enter your email"
-                        className="bg-transparent px-4 flex-1 w-full"
+                        className="bg-transparent px-4 flex-1 w-full text-gray-900 placeholder-gray-500"
                     />
-                    <Button
-                        size="sm"
-                        className="whitespace-nowrap"
-                        type="submit"
-                        variant="primary"
-                    >
-                        Sign Up
-                    </Button>
+                    <Link href="/signup">
+                        <Button
+                            size="sm"
+                            className="whitespace-nowrap"
+                            type="button"
+                            variant="primary"
+                        >
+                            Get Started
+                        </Button>
+                    </Link>
                 </form>
             </div>
         </section>
