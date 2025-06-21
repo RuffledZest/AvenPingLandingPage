@@ -9,10 +9,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 
 const navLinks = [
-    { label: "Home", href: "#" },
-    { label: "Features", href: "#features" },
-    { label: "Integrations", href: "#integrations" },
-    { label: "FAQs", href: "#faqs" },
+    { label: "Pricing", href: "#" },
+    { label: "Features", href: "#pricing" },
+    { label: "Insights", href: "#integrations" },
+    // { label: "FAQs", href: "#faqs" },
 ];
 
 export default function Navbar() {
@@ -25,7 +25,7 @@ export default function Navbar() {
                     <div className="border border-gray-200 rounded-[27px] lg:rounded-full bg-white/90 backdrop-blur shadow-sm">
                         <figure className="grid grid-cols-2 lg:grid-cols-3  py-2 lg:px-2 px-4  items-center ">
                             <div>
-                                <div className="text-2xl font-bold text-green-600">
+                                <div className="text-2xl font-bold text-green-600 px-5">
                                     AvenPing
                                 </div>
                             </div>

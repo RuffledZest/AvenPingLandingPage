@@ -49,7 +49,7 @@ export default function LogoTicker() {
                                         src={each.image}
                                         alt={each.name}
                                         key={each.name}
-                                        className="opacity-60"
+                                        className="opacity-60 invert"
                                     />
                                 ))}
                             </React.Fragment>
