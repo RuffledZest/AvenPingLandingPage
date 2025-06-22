@@ -1,44 +1,65 @@
 "use client";
 
-import logoImage from "@/assets/images/logo.svg";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
 import Button from "@/components/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 
 const navLinks = [
-    { label: "Pricing", href: "#" },
-    { label: "Features", href: "#pricing" },
-    { label: "Insights", href: "#integrations" },
-    // { label: "FAQs", href: "#faqs" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Features", href: "#features" },
+    { label: "Insights", href: "/insights" },
 ];
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
         <>
-
-       
-            <section className="py-4 lg:py-8 fixed w-full top-0 z-50
-                
-              ">
-                <div className="container max-w-5xl">
-                    <div className="border border-gray-200 rounded-[27px] lg:rounded-full bg-white/70 backdrop-blur shadow-sm">
-                        <figure className="grid grid-cols-2 lg:grid-cols-3  py-2 lg:px-2 px-4  items-center ">
+            <motion.section 
+                className="py-4 lg:py-8 fixed w-full top-0 z-50"
+                animate={{
+                    backgroundColor: isScrolled ? "rgba(255, 255, 255, 0)" : "rgba(255, 255, 255, 0)"
+                }}
+                transition={{ duration: 0.3 }}
+            >
+                <div className={`container transition-all duration-300 ${isScrolled ? 'max-w-5xl' : 'max-w-full px-0'}`}>
+                    <motion.div 
+                        className={`transition-all duration-300 ${
+                            isScrolled 
+                                ? 'border border-gray-200 rounded-[27px] lg:rounded-full bg-white/70 backdrop-blur shadow-sm' 
+                                : 'bg-white/90 backdrop-blur border-b border-gray-200'
+                        }`}
+                        animate={{
+                            borderRadius: isScrolled ? "27px" : "0px"
+                        }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <figure className={`grid grid-cols-2 lg:grid-cols-3 py-2 items-center ${
+                            isScrolled ? 'lg:px-2 px-4' : 'px-4 lg:px-8'
+                        }`}>
                             <div>
                                 <div className="text-2xl font-bold text-cyan-600 px-5">
                                     AvenPing
                                 </div>
                             </div>
-                            <div className="hidden lg:flex justify-center items-center ">
+                            <div className="hidden lg:flex justify-center items-center">
                                 <nav className="flex gap-6 font-medium text-gray-700">
                                     {navLinks.map((each) => (
-                                        <a href={each.href} key={each.href} className="hover:text-cyan-600 transition-colors">
+                                        <Link href={each.href} key={each.href} className="hover:text-cyan-600 transition-colors">
                                             {each.label}
-                                        </a>
+                                        </Link>
                                     ))}
                                 </nav>
                             </div>
@@ -105,9 +126,9 @@ export default function Navbar() {
                                 >
                                     <div className="flex flex-col items-center gap-4 py-4">
                                         {navLinks.map((link) => (
-                                            <a key={link.href} href={link.href} className="text-gray-700 hover:text-cyan-600 transition-colors">
+                                            <Link key={link.href} href={link.href} className="text-gray-700 hover:text-cyan-600 transition-colors">
                                                 {link.label}
-                                            </a>
+                                            </Link>
                                         ))}
                                         <Link href="/login" className="w-3/4">
                                             <Button
@@ -129,9 +150,9 @@ export default function Navbar() {
                                 </motion.figure>
                             )}
                         </AnimatePresence>
-                    </div>
+                    </motion.div>
                 </div>
-            </section>
+            </motion.section>
             <div className="pb-[86px] md:pb-[98px]"></div>
         </>
     );

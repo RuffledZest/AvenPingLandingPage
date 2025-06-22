@@ -64,17 +64,14 @@ export default function Hero() {
                 <motion.div
                     ref={leftDesignScope}
                     initial={{ opacity: 0, y: 400, x: 0 }}
-                    
-                    className="absolute inset-0 top-[30rem] hidden lg:block"
-                    drag
+                    className="absolute inset-0 top-[30rem] hidden lg:block pointer-events-none"
+                    style={{ zIndex: 1 }}
                 >
                     <Image
                         draggable={false}
                         src={designExample1}
                         alt="WhatsApp business example 1"
-                        //i want the shadow to be colorful gradient starting from cyan to purple 
-                        className="rounded-lg shadow-lg shadow-cyan-200/50 border border-cyan-200/50 border-4
-                        "
+                        className="rounded-lg shadow-lg shadow-cyan-200/50 border border-cyan-200/50 border-4 pointer-events-none"
                         style={{ maxWidth: "100%", height: "auto" }}
                     />
                 </motion.div>
@@ -82,6 +79,7 @@ export default function Hero() {
                     ref={leftPointerScope}
                     initial={{ opacity: 0, y: 100, x: -200 }}
                     className="absolute top-[32rem] left-56 hidden lg:block"
+                    style={{ zIndex: 2 }}
                 >
                     <Pointer name="Karan" />
                 </motion.div>
@@ -91,6 +89,7 @@ export default function Hero() {
                     ref={rightDesignScope}
                     className="absolute -right-[35rem] top-[10rem] hidden lg:block"
                     drag
+                    style={{ zIndex: 1 }}
                 >
                     <Image
                         draggable={false}
@@ -104,22 +103,23 @@ export default function Hero() {
                     ref={rightPointerScope}
                     initial={{ opacity: 0, x: 275, y: 200 }}
                     className="absolute -top-4 right-80 hidden lg:block"
+                    style={{ zIndex: 2 }}
                 >
                     <Pointer color="blue" name="Vib" />
                 </motion.div>
 
-                <div className="flex justify-center">
+                <div className="flex justify-center" style={{ zIndex: 10, position: "relative" }}>
                     <div className="inline-flex py-1 px-3 bg-gradient-to-r from-cyan-400 to-cyan-500 rounded-full text-white font-semibold">
                         🚀 Trusted by 10,000+ businesses
                     </div>
                 </div>
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium text-center mt-6 text-gray-900">
+                <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium text-center mt-6 text-gray-900" style={{ zIndex: 10, position: "relative" }}>
                     WhatsApp Business, <span className="text-cyan-600">simplified</span>
                 </h1>
-                <p className="text-center text-xl text-gray-600 mt-8 max-w-2xl mx-auto">
+                <p className="text-center text-xl text-gray-600 mt-8 max-w-2xl mx-auto" style={{ zIndex: 10, position: "relative" }}>
                     Streamline your WhatsApp business communications with powerful automation, analytics, and customer management tools.
                 </p>
-                <form className="mx-auto flex border border-gray-300 rounded-full p-2 mt-8 max-w-lg bg-white shadow-sm">
+                <form className="mx-auto flex border border-gray-300 rounded-full p-2 mt-8 max-w-lg bg-white shadow-sm" style={{ zIndex: 10, position: "relative" }}>
                     <input
                         type="email"
                         placeholder="Enter your email"

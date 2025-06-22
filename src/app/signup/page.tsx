@@ -69,19 +69,19 @@ export default function Signup() {
         switch (currentStep) {
             case 1:
                 return (
-                    <div className="space-y-6">
+                    <div className="space-y-8">
                         <div className="text-center">
-                            <h2 className="text-3xl font-semibold text-gray-900 mb-2">
+                            <h2 className="text-4xl font-semibold text-gray-900 mb-4">
                                 What should we call you?
                             </h2>
-                            <p className="text-gray-600">Let's start with your name</p>
+                            <p className="text-xl text-gray-600">Let's start with your name</p>
                         </div>
-                        <div>
+                        <div className="max-w-md mx-auto">
                             <input
                                 type="text"
                                 value={formData.name}
                                 onChange={(e) => updateFormData("name", e.target.value)}
-                                className="w-full px-4 py-4 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors"
+                                className="w-full px-6 py-4 text-xl border border-gray-300 rounded-2xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors"
                                 placeholder="Enter your full name"
                                 autoFocus
                             />
@@ -91,25 +91,25 @@ export default function Signup() {
 
             case 2:
                 return (
-                    <div className="space-y-6">
+                    <div className="space-y-8">
                         <div className="text-center">
-                            <h2 className="text-3xl font-semibold text-gray-900 mb-2">
+                            <h2 className="text-4xl font-semibold text-gray-900 mb-4">
                                 What's your industry?
                             </h2>
-                            <p className="text-gray-600">Help us customize your experience</p>
+                            <p className="text-xl text-gray-600">Help us customize your experience</p>
                         </div>
-                        <div className="grid grid-cols-1 gap-3">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
                             {industries.map((industry) => (
                                 <button
                                     key={industry}
                                     onClick={() => updateFormData("industry", industry)}
-                                    className={`p-4 text-left border rounded-lg transition-colors ${
+                                    className={`p-6 text-left border-2 rounded-2xl transition-all duration-200 ${
                                         formData.industry === industry
-                                            ? "border-cyan-500 bg-cyan-50 text-cyan-700"
-                                            : "border-gray-300 hover:border-gray-400"
+                                            ? "border-cyan-500 bg-cyan-50 text-cyan-700 shadow-md"
+                                            : "border-gray-200 hover:border-gray-300 hover:shadow-sm"
                                     }`}
                                 >
-                                    {industry}
+                                    <span className="text-lg font-medium">{industry}</span>
                                 </button>
                             ))}
                         </div>
@@ -118,25 +118,25 @@ export default function Signup() {
 
             case 3:
                 return (
-                    <div className="space-y-6">
+                    <div className="space-y-8">
                         <div className="text-center">
-                            <h2 className="text-3xl font-semibold text-gray-900 mb-2">
+                            <h2 className="text-4xl font-semibold text-gray-900 mb-4">
                                 How many customers do you serve?
                             </h2>
-                            <p className="text-gray-600">This helps us recommend the right plan</p>
+                            <p className="text-xl text-gray-600">This helps us recommend the right plan</p>
                         </div>
-                        <div className="grid grid-cols-1 gap-3">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
                             {clientSizes.map((size) => (
                                 <button
                                     key={size}
                                     onClick={() => updateFormData("clientSize", size)}
-                                    className={`p-4 text-left border rounded-lg transition-colors ${
+                                    className={`p-6 text-left border-2 rounded-2xl transition-all duration-200 ${
                                         formData.clientSize === size
-                                            ? "border-cyan-500 bg-cyan-50 text-cyan-700"
-                                            : "border-gray-300 hover:border-gray-400"
+                                            ? "border-cyan-500 bg-cyan-50 text-cyan-700 shadow-md"
+                                            : "border-gray-200 hover:border-gray-300 hover:shadow-sm"
                                     }`}
                                 >
-                                    {size}
+                                    <span className="text-lg font-medium">{size}</span>
                                 </button>
                             ))}
                         </div>
@@ -145,19 +145,19 @@ export default function Signup() {
 
             case 4:
                 return (
-                    <div className="space-y-6">
+                    <div className="space-y-8">
                         <div className="text-center">
-                            <h2 className="text-3xl font-semibold text-gray-900 mb-2">
+                            <h2 className="text-4xl font-semibold text-gray-900 mb-4">
                                 What's your email?
                             </h2>
-                            <p className="text-gray-600">We'll use this to create your account</p>
+                            <p className="text-xl text-gray-600">We'll use this to create your account</p>
                         </div>
-                        <div>
+                        <div className="max-w-md mx-auto">
                             <input
                                 type="email"
                                 value={formData.email}
                                 onChange={(e) => updateFormData("email", e.target.value)}
-                                className="w-full px-4 py-4 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors"
+                                className="w-full px-6 py-4 text-xl border border-gray-300 rounded-2xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors"
                                 placeholder="Enter your email address"
                                 autoFocus
                             />
@@ -167,23 +167,23 @@ export default function Signup() {
 
             case 5:
                 return (
-                    <div className="space-y-6">
+                    <div className="space-y-8">
                         <div className="text-center">
-                            <h2 className="text-3xl font-semibold text-gray-900 mb-2">
+                            <h2 className="text-4xl font-semibold text-gray-900 mb-4">
                                 Create a password
                             </h2>
-                            <p className="text-gray-600">Choose a strong password for your account</p>
+                            <p className="text-xl text-gray-600">Choose a strong password for your account</p>
                         </div>
-                        <div>
+                        <div className="max-w-md mx-auto">
                             <input
                                 type="password"
                                 value={formData.password}
                                 onChange={(e) => updateFormData("password", e.target.value)}
-                                className="w-full px-4 py-4 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors"
+                                className="w-full px-6 py-4 text-xl border border-gray-300 rounded-2xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors"
                                 placeholder="Enter a strong password"
                                 autoFocus
                             />
-                            <p className="text-sm text-gray-500 mt-2">
+                            <p className="text-sm text-gray-500 mt-3 text-center">
                                 Password should be at least 8 characters long
                             </p>
                         </div>
@@ -196,35 +196,43 @@ export default function Signup() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-white flex items-center justify-center p-4">
-            <div className="w-full max-w-lg">
-                <div className="text-center mb-8">
-                    <Link href="/" className="text-3xl font-bold text-cyan-600">
-                        AvenPing
-                    </Link>
-                    <div className="flex justify-center mt-4">
-                        <div className="flex space-x-2">
+        <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-white to-purple-50">
+            {/* Header */}
+            <div className="bg-white/80 backdrop-blur border-b border-gray-200">
+                <div className="container max-w-6xl py-6">
+                    <div className="flex items-center justify-between">
+                        <Link href="/" className="text-3xl font-bold text-cyan-600">
+                            AvenPing
+                        </Link>
+                        <div className="flex items-center space-x-2">
                             {[1, 2, 3, 4, 5].map((step) => (
                                 <div
                                     key={step}
-                                    className={`w-3 h-3 rounded-full ${
+                                    className={`w-3 h-3 rounded-full transition-colors duration-300 ${
                                         step <= currentStep ? "bg-cyan-500" : "bg-gray-300"
                                     }`}
                                 />
                             ))}
+                            <span className="ml-4 text-sm text-gray-600">
+                                Step {currentStep} of 5
+                            </span>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
+            {/* Main Content */}
+            <div className="container max-w-6xl py-16">
+                <div className="max-w-4xl mx-auto">
                     {renderStep()}
 
-                    <div className="flex justify-between mt-8">
+                    {/* Navigation */}
+                    <div className="flex justify-between items-center mt-16 max-w-2xl mx-auto">
                         <Button
                             variant="secondary"
                             onClick={handleBack}
                             disabled={currentStep === 1}
-                            className={`flex items-center gap-2 ${
+                            className={`flex items-center gap-2 px-8 h-14 text-lg ${
                                 currentStep === 1 ? "opacity-50 cursor-not-allowed" : ""
                             }`}
                         >
@@ -236,7 +244,7 @@ export default function Signup() {
                             variant="primary"
                             onClick={handleNext}
                             disabled={!isStepValid()}
-                            className={`flex items-center gap-2 ${
+                            className={`flex items-center gap-2 px-8 h-14 text-lg ${
                                 !isStepValid() ? "opacity-50 cursor-not-allowed" : ""
                             }`}
                         >
@@ -245,15 +253,16 @@ export default function Signup() {
                         </Button>
                     </div>
                 </div>
+            </div>
 
-                <div className="mt-6 text-center">
-                    <p className="text-gray-600">
-                        Already have an account?{" "}
-                        <Link href="/login" className="text-cyan-600 hover:text-cyan-700 font-medium">
-                            Sign in
-                        </Link>
-                    </p>
-                </div>
+            {/* Footer */}
+            <div className="text-center pb-8">
+                <p className="text-gray-600">
+                    Already have an account?{" "}
+                    <Link href="/login" className="text-cyan-600 hover:text-cyan-700 font-medium">
+                        Sign in
+                    </Link>
+                </p>
             </div>
         </div>
     );
