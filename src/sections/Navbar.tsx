@@ -28,7 +28,7 @@ export default function Navbar() {
     return (
         <>
             <motion.section 
-                className="py-4 lg:py-8 fixed w-full top-0 z-50"
+                className="pb-4 lg:pb-8 fixed w-full top-0 z-50"
                 animate={{
                     backgroundColor: isScrolled ? "rgba(255, 255, 255, 0)" : "rgba(255, 255, 255, 0)"
                 }}
@@ -39,10 +39,13 @@ export default function Navbar() {
                         className={`transition-all duration-300 ${
                             isScrolled 
                                 ? 'border border-gray-200 rounded-[27px] lg:rounded-full bg-white/70 backdrop-blur shadow-sm' 
-                                : 'bg-white/90 backdrop-blur border-b border-gray-200'
+                                : 'bg-white/90 backdrop-blur '
                         }`}
                         animate={{
-                            borderRadius: isScrolled ? "27px" : "0px"
+                            borderRadius: isScrolled ? "50px" : "0px",
+                            marginTop: isScrolled ? "16px" : "0",
+                            backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.7)" : "transparent",
+                            boxShadow: isScrolled ? "0 2px 10px rgba(0, 0, 0, 0.1)" : "none",
                         }}
                         transition={{ duration: 0.3 }}
                     >
