@@ -64,15 +64,24 @@ export default function Hero() {
                 <motion.div
                     ref={leftDesignScope}
                     initial={{ opacity: 0, y: 400, x: 0 }}
-                    className="absolute inset-0 top-[30rem] hidden lg:block pointer-events-none"
+                    className="absolute inset-0 top-[30rem] hidden lg:block pointer-events-none backdrop-blur-lg"
                     style={{ zIndex: 1 }}
                 >
                     <Image
                         draggable={false}
                         src={designExample1}
                         alt="WhatsApp business example 1"
-                        className="rounded-lg shadow-lg shadow-cyan-200/50 border border-cyan-200/50 border-4 pointer-events-none"
-                        style={{ maxWidth: "100%", height: "auto" }}
+                        className="rounded-lg shadow-lg pointer-events-none"
+                        style={{
+                            maxWidth: "100%",
+                            height: "auto",
+                            border: "4px solid transparent",
+                            borderRadius: "0.5rem",
+                            backgroundOrigin: "border-box",
+                            backgroundClip: "padding-box, border-box",
+                            backgroundImage:
+                                "linear-gradient(to bottom right, rgba(236,254,255,0.7), rgba(224,242,254,0.6) 60%, rgba(237,233,254,0.6) 100%), linear-gradient(120deg, rgba(34,211,238,0.3), rgba(139,92,246,0.3), rgba(168,85,247,0.3))",
+                        }}
                     />
                 </motion.div>
                 <motion.div

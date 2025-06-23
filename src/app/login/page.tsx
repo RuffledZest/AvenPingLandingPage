@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import Button from "@/components/Button";
 import Link from "next/link";
 import { Eye, EyeOff } from "lucide-react";
+import Image from "next/image";
+import LoginImg from "@/assets/images/loginPgImg.png";
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -25,10 +27,14 @@ export default function Login() {
     };
 
     return (
-        <div className="min-h-screen flex">
+        <div className="min-h-screen flex bg-gradient-to-br  from-cyan-400 to-purple-300 via-white ">
             {/* Left side - Welcome section with background */}
-            <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-cyan-500 via-cyan-600 to-blue-700 relative overflow-hidden">
-                <div className="absolute inset-0 bg-black/20"></div>
+            <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br
+                from-cyan-400 to-purple-300 via-white 
+                bg-cover bg-center 
+
+             relative overflow-hidden">
+                <div className="absolute inset-0 "></div>
                 <div 
                     className="absolute inset-0 opacity-10"
                     style={{
@@ -36,8 +42,8 @@ export default function Login() {
                     }}
                 ></div>
                 
-                <div className="relative z-10 flex flex-col justify-center px-12 text-white">
-                    <div className="mb-8">
+                <div className="relative z-10 flex  justify-center items-center px-12 text-white">
+                    {/* <div className="mb-8">
                         <h1 className="text-4xl font-bold mb-4">
                             Welcome to AvenPing
                         </h1>
@@ -77,12 +83,24 @@ export default function Login() {
                                 <p className="text-cyan-100">Work together seamlessly on customer conversations</p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
+                    <Image
+                        src={LoginImg}
+                        alt="WhatsApp Business Illustration"
+                        width={800}
+                        height={600}
+                        className="mt-8 rounded-lg shadow-lg
+                        transition-transform transform hover:scale-105
+
+                        "
+                        style={{ maxWidth: "100%", height: "auto" }}
+                        draggable={false}
+                    />
                 </div>
             </div>
 
             {/* Right side - Login form */}
-            <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-gray-50">
+            <div className="w-full lg:w-1/2 flex items-center justify-center p-8  rounded-lg bg-gradient-to-br  to-cyan-400 from-purple-300 via-white backdrop-opacity-20">
                 <div className="w-full max-w-md">
                     <div className="text-center mb-8">
                         <Link href="/" className="text-3xl font-bold text-cyan-600">
@@ -94,7 +112,7 @@ export default function Login() {
                         <p className="text-gray-600">Welcome back! Please enter your details.</p>
                     </div>
 
-                    <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
+                    <div className="bg-[#b4496d07] backdrop:blur-lg rounded-2xl shadow-lg p-8 border-4 border-white/30">
                         {error && (
                             <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6">
                                 {error}
@@ -111,7 +129,7 @@ export default function Login() {
                                     id="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors"
+                                    className="w-full px-4 py-3 bg-white/30 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors"
                                     placeholder="Enter your email or username"
                                     required
                                 />
@@ -127,7 +145,7 @@ export default function Login() {
                                         id="password"
                                         value={password}
                                         onChange={(e) => setPassword(e.target.value)}
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors pr-12"
+                                        className="bg-white/30 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors pr-12"
                                         placeholder="Enter your password"
                                         required
                                     />
