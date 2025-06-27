@@ -101,14 +101,14 @@ export default function Login() {
             </div>
 
             <div className="text-left">
-              <Link href="#" className="text-sm text-[#43A2C9] hover:text-blue-600 transition-colors">
+              <Link href="#" className="text-sm text-[#43A2C9] hover:text-cyan-600 transition-colors">
                 Forgot Password
               </Link>
             </div>
 
             <button
               type="submit"
-              className="w-full bg-[#43A2C9] hover:bg-blue-600 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-[#43A2C9] focus:ring-offset-2"
+              className="w-full bg-[#43A2C9] hover:bg-cyan-600 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-[#43A2C9] focus:ring-offset-2"
             >
               Sign In
             </button>
@@ -117,18 +117,18 @@ export default function Login() {
           <div className="mt-8 text-center space-y-4">
             <p className="text-xs text-gray-500">
               By proceeding, you agree to our{" "}
-              <Link href="#" className="text-[#43A2C9] hover:text-blue-600">
+              <Link href="#" className="text-[#43A2C9] hover:text-cyan-600">
                 Terms of Service
               </Link>{" "}
               and{" "}
-              <Link href="#" className="text-[#43A2C9] hover:text-blue-600">
+              <Link href="#" className="text-[#43A2C9] hover:text-cyan-600">
                 Privacy Policy
               </Link>
             </p>
 
             <p className="text-sm text-gray-600">
               {"Don't have an account? "}
-              <Link href="/signup" className="text-[#43A2C9] hover:text-blue-600 font-medium">
+              <Link href="/signup" className="text-[#43A2C9] hover:text-cyan-600 font-medium">
                 Sign up
               </Link>
             </p>

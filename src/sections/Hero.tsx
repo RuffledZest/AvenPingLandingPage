@@ -3,6 +3,7 @@
 import Button from "@/components/Button";
 import designExample1 from "@/assets/images/img1.png";
 import designExample2 from "@/assets/images/img2.png";
+import designExample3 from "@/assets/images/img3.png";
 import Image from "next/image";
 import Pointer from "@/components/Pointer";
 import { motion, useAnimate } from "framer-motion";
@@ -15,6 +16,8 @@ export default function Hero() {
 
     const [rightDesignScope, rightDesignAnimate] = useAnimate();
     const [rightPointerScope, rightPointerAnimate] = useAnimate();
+
+    const [leftDesignScope2, leftDesignAnimate2] = useAnimate();
 
     useEffect(() => {
         leftDesignAnimate([
@@ -30,6 +33,11 @@ export default function Hero() {
                 { y: [0, 16, 0], x: 0 },
                 { duration: 0.5, ease: "easeInOut" },
             ],
+        ]);
+
+        leftDesignAnimate2([
+            [leftDesignScope2.current, { opacity: 1 }, { duration: 0.5, delay: 1 }],
+            [leftDesignScope2.current, { y: 0, x: 0 }, { duration: 0.5 }],
         ]);
 
         rightDesignAnimate([
@@ -54,7 +62,7 @@ export default function Hero() {
                 { duration: 0.5, ease: "easeInOut" },
             ],
         ]);
-    }, []);
+    }, [leftDesignAnimate, leftDesignAnimate2, leftDesignScope, leftDesignScope2, leftPointerAnimate, leftPointerScope, rightDesignAnimate, rightDesignScope, rightPointerAnimate, rightPointerScope]);
 
     return (
         <section className="py-20 md:py-24 overflow-x-clip bg-gradient-to-b from-cyan-100 via-purple-100 to-white 
@@ -80,7 +88,7 @@ export default function Hero() {
                             backgroundOrigin: "border-box",
                             backgroundClip: "padding-box, border-box",
                             backgroundImage:
-                                "linear-gradient(to bottom right, rgba(236,254,255,0.7), rgba(224,242,254,0.6) 60%, rgba(237,233,254,0.6) 100%), linear-gradient(120deg, rgba(34,211,238,0.3), rgba(139,92,246,0.3), rgba(168,85,247,0.3))",
+                                "linear-gradient(to bottom right, rgba(255,255,255,0.7), rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.3) 100%)",
                         }}
                     />
                 </motion.div>
@@ -92,12 +100,86 @@ export default function Hero() {
                 >
                     <Pointer name="Karan" />
                 </motion.div>
+                
+                {/* the pic chart thing */}
+                <motion.div
+                    initial={{ opacity: 0, y: 100, x: -100 }}
+                    ref={leftDesignScope2}
+                    className="absolute -left-[3rem] -top-[4rem] hidden lg:block"
+                    drag
+                    dragConstraints={{
+                        left: 0,
+                        right: typeof window !== "undefined" ? window.innerWidth - 400 : 0,
+                        top: 0,
+                        bottom: typeof window !== "undefined" ? window.innerHeight - 300 : 0,
+                    }}
+                    dragElastic={0.5}
+                    onDragEnd={(event, info) => {
+                        setTimeout(() => {
+                            leftDesignAnimate2([
+                                [leftDesignScope2.current, { x: 0, y: 0 }, { duration: 0.8, ease: "easeInOut" }]
+                            ]);
+                        }, 3000);
+                    }}
+                    style={{ zIndex: 1 }}
+                >
+                    <Image
+                        draggable={false}
+                        src={designExample3}
+                        alt="WhatsApp business example 3"
+                        className="rounded-lg shadow-lg"
+                        style={{
+                            maxWidth: "40%",
+                            height: "auto",
+                            border: "4px solid transparent",
+                            borderRadius: "0.5rem",
+                            backgroundOrigin: "border-box",
+                            backgroundClip: "padding-box, border-box",
+                            backgroundImage:
+                                "linear-gradient(to bottom right, rgba(255,255,255,0.7), rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.3) 100%)",
+                        }}
+                    />
+                </motion.div>
+
 
                 <motion.div
                     initial={{ opacity: 0, y: 100, x: 100 }}
                     ref={rightDesignScope}
-                    className="absolute -right-[35rem] top-[10rem] hidden lg:block"
+                    className="absolute -right-[29rem] top-[10rem] hidden lg:block"
                     drag
+                    dragConstraints={{
+                        left: 0,
+                        right: typeof window !== "undefined" ? window.innerWidth - 400 : 0,
+                        top: 0,
+                        bottom: typeof window !== "undefined" ? window.innerHeight - 300 : 0,
+                    }}
+                    dragElastic={0.5}
+                    onDragEnd={(event, info) => {
+                        const node = rightDesignScope.current;
+                        if (!node) return;
+                        const rect = node.getBoundingClientRect();
+                        const minX = 0;
+                        const maxX = window.innerWidth - rect.width;
+                        const minY = 0;
+                        const maxY = window.innerHeight - rect.height;
+                        let x = rect.left;
+                        let y = rect.top;
+                        let bounce = false;
+                        if (x < minX) { x = minX; bounce = true; }
+                        if (x > maxX) { x = maxX; bounce = true; }
+                        if (y < minY) { y = minY; bounce = true; }
+                        if (y > maxY) { y = maxY; bounce = true; }
+                        if (bounce) {
+                            rightDesignAnimate([
+                                [rightDesignScope.current, { x: x - rect.left, y: y - rect.top }, { type: "spring", stiffness: 30 }]
+                            ]);
+                        }
+                        setTimeout(() => {
+                            rightDesignAnimate([
+                                [rightDesignScope.current, { x: 0, y: 0 }, { duration: 0.8, ease: "easeInOut" }]
+                            ]);
+                        }, 3000);
+                    }}
                     style={{ zIndex: 1 }}
                 >
                     <Image
@@ -105,9 +187,21 @@ export default function Hero() {
                         src={designExample2}
                         alt="WhatsApp business example 2"
                         className="rounded-lg shadow-lg"
-                        style={{ maxWidth: "50%", height: "auto" }}
+                        style={{
+                            maxWidth: "40%",
+                            height: "auto",
+                            border: "4px solid transparent",
+                            borderRadius: "0.5rem",
+                            backgroundOrigin: "border-box",
+                            backgroundClip: "padding-box, border-box",
+                            backgroundImage:
+                                "linear-gradient(to bottom right, rgba(255,255,255,0.7), rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.3) 100%)",
+                        }}
                     />
                 </motion.div>
+
+
+
                 <motion.div
                     ref={rightPointerScope}
                     initial={{ opacity: 0, x: 275, y: 200 }}
@@ -128,11 +222,11 @@ export default function Hero() {
                 <p className="text-center text-xl text-gray-600 mt-8 max-w-2xl mx-auto" style={{ zIndex: 10, position: "relative" }}>
                     Streamline your WhatsApp business communications with powerful automation, analytics, and customer management tools.
                 </p>
-                <form className="mx-auto flex border border-gray-300 rounded-full p-2 mt-8 max-w-lg bg-white shadow-sm" style={{ zIndex: 10, position: "relative" }}>
+                <form className="mx-auto flex border border-gray-300 rounded-full gap-2 p-2 mt-8 max-w-lg bg-white shadow-sm" style={{ zIndex: 10, position: "relative" }}>
                     <input
                         type="email"
                         placeholder="Enter your email"
-                        className="bg-transparent px-4 flex-1 w-full text-gray-900 placeholder-gray-500"
+                        className="bg-transparent px-4 flex-1 w-full text-gray-900 rounded-full placeholder-gray-500"
                     />
                     <Link href="/signup">
                         <Button

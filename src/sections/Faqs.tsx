@@ -43,7 +43,7 @@ export default function Faqs() {
                     <span className="text-cyan-600">answers</span>
                 </h2>
 
-                <div className="mt-12 flex flex-col gap-6 max-w-xl mx-auto">
+                <div className="mt-12 flex flex-col gap-6 max-w-6xl mx-auto">
                     {faqs.map((faq, faqIndex) => (
                         <div
                             key={faq.question}

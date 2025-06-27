@@ -82,7 +82,7 @@ export default function Navbar() {
                                         >
                                             <Menu
                                                 className="text-gray-700"
-                                                size={30}
+                                                size={25}
                                             />
                                         </motion.div>
                                     ) : (

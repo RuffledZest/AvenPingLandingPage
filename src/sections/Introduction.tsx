@@ -38,7 +38,7 @@ export default function Introduction() {
                     <div className="flex justify-center">
                         <Tag>Why AvenPing</Tag>
                     </div>
-                    <div className="text-4xl md:text-6xl lg:text-7xl text-center font-medium mt-10 text-gray-900">
+                    <div className="text-4xl md:text-6xl lg:text-6xl text-center font-medium mt-10 text-gray-900">
                         <span>Your WhatsApp business deserves better.&nbsp;</span>
                         <span className="text-gray-300">
                             {words.map((word, wordIndex) => (
