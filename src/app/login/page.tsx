@@ -1,194 +1,144 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import Button from "@/components/Button";
-import Link from "next/link";
-import { Eye, EyeOff } from "lucide-react";
-import Image from "next/image";
-import LoginImg from "@/assets/images/loginPgImg.png";
+import type React from "react"
+
+import { useState } from "react"
+import { useRouter } from "next/navigation"
+import Link from "next/link"
+import { Eye, EyeOff, Triangle } from "lucide-react"
 
 export default function Login() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [showPassword, setShowPassword] = useState(false);
-    const [error, setError] = useState("");
-    const router = useRouter();
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [showPassword, setShowPassword] = useState(false)
+  const [error, setError] = useState("")
+  const router = useRouter()
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setError("");
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    setError("")
 
-        if (email === "admin" && password === "admin") {
-            router.push("/dashboard");
-        } else {
-            setError("Invalid credentials. Use 'admin' for both email and password.");
-        }
-    };
+    if (email === "admin" && password === "admin") {
+      router.push("/dashboard")
+    } else {
+      setError("Invalid credentials. Use 'admin' for both email and password.")
+    }
+  }
 
-    return (
-        <div className="min-h-screen flex bg-gradient-to-br  from-cyan-400 to-purple-300 via-white ">
-            {/* Left side - Welcome section with background */}
-            <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br
-                from-cyan-400 to-purple-300 via-white 
-                bg-cover bg-center 
+  return (
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* So this is the bg I have added, ig you can change this with themes */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#DFFFF9] via-white to-[#FDCEFF]" />
 
-             relative overflow-hidden">
-                <div className="absolute inset-0 "></div>
-                <div 
-                    className="absolute inset-0 opacity-10"
-                    style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                    }}
-                ></div>
-                
-                <div className="relative z-10 flex  justify-center items-center px-12 text-white">
-                    {/* <div className="mb-8">
-                        <h1 className="text-4xl font-bold mb-4">
-                            Welcome to AvenPing
-                        </h1>
-                        <p className="text-xl text-cyan-100 leading-relaxed">
-                            Transform your WhatsApp business communications with powerful automation, 
-                            analytics, and customer management tools.
-                        </p>
-                    </div>
-                    
-                    <div className="space-y-6">
-                        <div className="flex items-center space-x-4">
-                            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                                <span className="text-2xl">🚀</span>
-                            </div>
-                            <div>
-                                <h3 className="font-semibold">Boost Productivity</h3>
-                                <p className="text-cyan-100">Automate responses and manage conversations efficiently</p>
-                            </div>
-                        </div>
-                        
-                        <div className="flex items-center space-x-4">
-                            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                                <span className="text-2xl">📊</span>
-                            </div>
-                            <div>
-                                <h3 className="font-semibold">Smart Analytics</h3>
-                                <p className="text-cyan-100">Track performance and customer engagement</p>
-                            </div>
-                        </div>
-                        
-                        <div className="flex items-center space-x-4">
-                            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                                <span className="text-2xl">👥</span>
-                            </div>
-                            <div>
-                                <h3 className="font-semibold">Team Collaboration</h3>
-                                <p className="text-cyan-100">Work together seamlessly on customer conversations</p>
-                            </div>
-                        </div>
-                    </div> */}
-                    <Image
-                        src={LoginImg}
-                        alt="WhatsApp Business Illustration"
-                        width={800}
-                        height={600}
-                        className="mt-8 rounded-lg shadow-lg
-                        transition-transform transform hover:scale-105
-
-                        "
-                        style={{ maxWidth: "100%", height: "auto" }}
-                        draggable={false}
-                    />
-                </div>
-            </div>
-
-            {/* Right side - Login form */}
-            <div className="w-full lg:w-1/2 flex items-center justify-center p-8  rounded-lg bg-gradient-to-br  to-cyan-400 from-purple-300 via-white backdrop-opacity-20">
-                <div className="w-full max-w-md">
-                    <div className="text-center mb-8">
-                        <Link href="/" className="text-3xl font-bold text-cyan-600">
-                            AvenPing
-                        </Link>
-                        <h2 className="text-2xl font-semibold text-gray-900 mt-6 mb-2">
-                            Sign in to your account
-                        </h2>
-                        <p className="text-gray-600">Welcome back! Please enter your details.</p>
-                    </div>
-
-                    <div className="bg-[#b4496d07] backdrop:blur-lg rounded-2xl shadow-lg p-8 border-4 border-white/30">
-                        {error && (
-                            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6">
-                                {error}
-                            </div>
-                        )}
-
-                        <form onSubmit={handleSubmit} className="space-y-6">
-                            <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                                    Email or Username
-                                </label>
-                                <input
-                                    type="text"
-                                    id="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    className="w-full px-4 py-3 bg-white/30 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors"
-                                    placeholder="Enter your email or username"
-                                    required
-                                />
-                            </div>
-
-                            <div>
-                                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-                                    Password
-                                </label>
-                                <div className="relative">
-                                    <input
-                                        type={showPassword ? "text" : "password"}
-                                        id="password"
-                                        value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
-                                        className="bg-white/30 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors pr-12"
-                                        placeholder="Enter your password"
-                                        required
-                                    />
-                                    <button
-                                        type="button"
-                                        onClick={() => setShowPassword(!showPassword)}
-                                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
-                                    >
-                                        {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div className="flex items-center justify-between">
-                                <label className="flex items-center">
-                                    <input type="checkbox" className="rounded border-gray-300 text-cyan-600 focus:ring-cyan-500" />
-                                    <span className="ml-2 text-sm text-gray-600">Remember me</span>
-                                </label>
-                                <a href="#" className="text-sm text-cyan-600 hover:text-cyan-700">
-                                    Forgot password?
-                                </a>
-                            </div>
-
-                            <Button type="submit" variant="primary" className="w-full h-12 text-lg">
-                                Sign In
-                            </Button>
-                        </form>
-
-                        <div className="mt-6 text-center">
-                            <p className="text-gray-600">
-                                Don't have an account?{" "}
-                                <Link href="/signup" className="text-cyan-600 hover:text-cyan-700 font-medium">
-                                    Sign up
-                                </Link>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="mt-6 text-center text-sm text-gray-500">
-                        <p>Demo credentials: admin / admin</p>
-                    </div>
-                </div>
-            </div>
+     
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
+      
+      <div className="relative z-10 w-full max-w-md mx-auto px-6 py-8 flex flex-col items-center justify-center space-y-2">
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <Triangle className="w-6 h-6 text-[#43A2C9] fill-current" />
+            <span className="text-2xl md:text-3xl  font-semibold text-gray-800">
+              <span className="text-[#43A2C9]">Aven</span>Ping
+            </span>
+          </div>
         </div>
-    );
+
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl
+        
+         shadow-2xl border-4 border-black/10 p-8 md:min-w-max">
+    
+          <div className="text-center mb-8">
+            <h1 className="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Sign in to your account</h1>
+            <p className="text-gray-600 text-xs md:text-sm">Welcome back! Please enter your details.</p>
+          </div>
+
+          {error && (
+            <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6 text-sm">
+              {error}
+            </div>
+          )}
+
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                email or username
+              </label>
+              <input
+                type="text"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#43A2C9] focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-400"
+                placeholder="enter you email"
+                required
+              />
+            </div>
+
+            <div>
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                password
+              </label>
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#43A2C9] focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-400 pr-12"
+                  placeholder="enter your password"
+                  required
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                </button>
+              </div>
+            </div>
+
+            <div className="text-left">
+              <Link href="#" className="text-sm text-[#43A2C9] hover:text-blue-600 transition-colors">
+                Forgot Password
+              </Link>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-[#43A2C9] hover:bg-blue-600 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-[#43A2C9] focus:ring-offset-2"
+            >
+              Sign In
+            </button>
+          </form>
+
+          <div className="mt-8 text-center space-y-4">
+            <p className="text-xs text-gray-500">
+              By proceeding, you agree to our{" "}
+              <Link href="#" className="text-[#43A2C9] hover:text-blue-600">
+                Terms of Service
+              </Link>{" "}
+              and{" "}
+              <Link href="#" className="text-[#43A2C9] hover:text-blue-600">
+                Privacy Policy
+              </Link>
+            </p>
+
+            <p className="text-sm text-gray-600">
+              {"Don't have an account? "}
+              <Link href="/signup" className="text-[#43A2C9] hover:text-blue-600 font-medium">
+                Sign up
+              </Link>
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-6 text-center">
+          <p className="text-xs text-gray-500">Demo credentials: admin / admin</p>
+        </div>
+      </div>
+    </div>
+  )
 }
