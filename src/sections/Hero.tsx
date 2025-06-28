@@ -187,12 +187,12 @@ export default function Hero() {
                         draggable={false}
                         src={designExample2}
                         alt="WhatsApp business example 2"
-                        className="rounded-lg shadow-lg"
+                        className=" shadow-lg"
                         style={{
+                           
                             maxWidth: "40%",
                             height: "auto",
                             border: "4px solid transparent",
-                            borderRadius: "0.5rem",
                             backgroundOrigin: "border-box",
                             backgroundClip: "padding-box, border-box",
                             backgroundImage:
