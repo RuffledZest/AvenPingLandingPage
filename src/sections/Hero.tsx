@@ -101,7 +101,7 @@ export default function Hero() {
                     <Pointer name="Karan" />
                 </motion.div>
                 
-                {/* the pic chart thing */}
+                {/* the metric card thing */}
                 <motion.div
                     initial={{ opacity: 0, y: 100, x: -100 }}
                     ref={leftDesignScope2}
@@ -127,12 +127,13 @@ export default function Hero() {
                         draggable={false}
                         src={designExample3}
                         alt="WhatsApp business example 3"
-                        className="rounded-lg shadow-lg"
+                        className=" shadow-lg"
                         style={{
-                            maxWidth: "40%",
+                            maxWidth: "60%",
                             height: "auto",
                             border: "4px solid transparent",
-                            borderRadius: "0.5rem",
+                            borderRadius: "1rem",
+                            // borderRadius: "0.5rem",
                             backgroundOrigin: "border-box",
                             backgroundClip: "padding-box, border-box",
                             backgroundImage:
@@ -216,10 +217,10 @@ export default function Hero() {
                         🚀 Trusted by 10,000+ businesses
                     </div>
                 </div>
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium text-center mt-6 text-gray-900" style={{ zIndex: 10, position: "relative" }}>
+                <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium text-center mt-6 text-gray-900 selection:bg-yellow-300 selection:text-black" style={{ zIndex: 10, position: "relative" }}>
                     WhatsApp Business, <span className="text-cyan-600">simplified</span>
                 </h1>
-                <p className="text-center text-xl text-gray-600 mt-8 max-w-2xl mx-auto" style={{ zIndex: 10, position: "relative" }}>
+                <p className="selection:bg-yellow-300 selection:text-black text-center text-xl text-gray-600 mt-8 max-w-2xl mx-auto" style={{ zIndex: 10, position: "relative" }}>
                     Streamline your WhatsApp business communications with powerful automation, analytics, and customer management tools.
                 </p>
                 <form className="mx-auto flex border border-gray-300 rounded-full gap-2 p-2 mt-8 max-w-lg bg-white shadow-sm" style={{ zIndex: 10, position: "relative" }}>

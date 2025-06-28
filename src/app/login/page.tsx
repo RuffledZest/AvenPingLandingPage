@@ -33,7 +33,7 @@ export default function Login() {
      
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
       
-      <div className="relative z-10 w-full max-w-md mx-auto px-6 py-8 flex flex-col items-center justify-center space-y-2">
+      <div className="relative z-10 w-full max-w-md mx-auto px-6 py-6 flex flex-col items-center justify-center space-y-1">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 mb-2">
             <Triangle className="w-6 h-6 text-[#43A2C9] fill-current" />
@@ -45,7 +45,7 @@ export default function Login() {
 
         <div className="bg-white/80 backdrop-blur-sm rounded-2xl
         
-         shadow-2xl border-4 border-black/10 p-8 md:min-w-max">
+         shadow-2xl border-4 border-black/10 p-8 md:w-[98%] ">
     
           <div className="text-center mb-8">
             <h1 className="text-xl md:text-2xl font-semibold text-gray-900 mb-2">Sign in to your account</h1>
@@ -59,7 +59,7 @@ export default function Login() {
           )}
 
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-3">
             
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
