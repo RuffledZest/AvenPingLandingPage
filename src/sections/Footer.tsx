@@ -1,4 +1,5 @@
 
+import { RetroHeader } from "@/components/ardacity/ar-retro-header"
 import Button from "@/components/Button"
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react"
 import Link from "next/link"
@@ -30,6 +31,14 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="bg-gray-50">
+      <RetroHeader
+      title="GLIMPSE"
+      subtitle="SEARCH ALMOST"
+      highlightedWord="ANYTHING"
+      onSearch={(query, filter) => console.log(query, filter)}
+      onNavToggle={(option) => console.log(option)}
+    />
+      
       {/* Newsletter Section */}
       <div className="border-b border-gray-200">
         <div className="container py-12">

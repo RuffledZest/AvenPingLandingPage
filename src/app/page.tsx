@@ -1,4 +1,7 @@
 "use client"
+import AnimatedNavbar from "@/components/ardacity/animated-navbar";
+import { LiquidGlassNavbar } from "@/components/ardacity/liquid-glass-navbar";
+import { LiquidGlassMusicPlayer } from "@/components/liquid-glass-music-player";
 import CallToAction from "@/sections/CallToAction";
 import Faqs from "@/sections/Faqs";
 import Features from "@/sections/Features";
@@ -57,7 +60,10 @@ export default function Home() {
   }, [])
     return (
         <div ref={scrollRef} data-scroll-container>
-            <Navbar />
+            {/* <Navbar /> */}
+          
+            <AnimatedNavbar />
+            
             <Hero />
             <LogoTicker />
             <Introduction />

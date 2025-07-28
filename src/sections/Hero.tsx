@@ -3,12 +3,13 @@
 import Button from "@/components/Button";
 import designExample1 from "@/assets/images/img1.png";
 import designExample2 from "@/assets/images/img2.png";
-import designExample3 from "@/assets/images/img3.png";
+import designExample3 from "@/assets/images/Frame78.svg";
 import Image from "next/image";
 import Pointer from "@/components/Pointer";
 import { motion, useAnimate } from "framer-motion";
 import { useEffect } from "react";
 import Link from "next/link";
+import { LiquidGlassMusicPlayer } from "@/components/liquid-glass-music-player";
 
 export default function Hero() {
     const [leftDesignScope, leftDesignAnimate] = useAnimate();
@@ -79,7 +80,7 @@ export default function Hero() {
                         draggable={false}
                         src={designExample1}
                         alt="WhatsApp business example 1"
-                        className="rounded-lg shadow-lg pointer-events-none"
+                        className="rounded-lg shadow-lg pointer-events-none invert"
                         style={{
                             maxWidth: "100%",
                             height: "auto",
@@ -105,7 +106,7 @@ export default function Hero() {
                 <motion.div
                     initial={{ opacity: 0, y: 100, x: -100 }}
                     ref={leftDesignScope2}
-                    className="absolute -left-[3rem] -top-[4rem] hidden lg:block"
+                    className="absolute -left-[3rem] -top-[4rem] hidden lg:block w-full"
                     drag
                     dragConstraints={{
                         left: 0,
@@ -123,23 +124,30 @@ export default function Hero() {
                     }}
                     style={{ zIndex: 1 }}
                 >
-                    <Image
+                    {/* <Image
                         draggable={false}
                         src={designExample3}
                         alt="WhatsApp business example 3"
-                        className=" shadow-lg"
+                        className=" "
                         style={{
-                            maxWidth: "60%",
+                            maxWidth: "100%",
                             height: "auto",
-                            border: "4px solid transparent",
-                            borderRadius: "1rem",
+
+                            
                             // borderRadius: "0.5rem",
                             backgroundOrigin: "border-box",
                             backgroundClip: "padding-box, border-box",
-                            backgroundImage:
-                                "linear-gradient(to bottom right, rgba(255,255,255,0.7), rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.3) 100%)",
+                            // backgroundImage:
+                            //     "linear-gradient(to bottom right, rgba(255,255,255,0.7), rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.3) 100%)",
                         }}
-                    />
+                    /> */}
+                    
+                     <LiquidGlassMusicPlayer
+              albumArt=""
+              songTitle="Midnight Dreams"
+              artist="Luna & The Stars"
+              duration={245}
+            />
                 </motion.div>
 
 
@@ -212,18 +220,18 @@ export default function Hero() {
                     <Pointer color="blue" name="Vib" />
                 </motion.div>
 
-                <div className="flex justify-center" style={{ zIndex: 10, position: "relative" }}>
+                <div className="hidden flex justify-center" style={{ zIndex: 10, position: "relative" }}>
                     <div className="inline-flex py-1 px-3 bg-gradient-to-r from-cyan-400 to-cyan-500 rounded-full text-white font-semibold">
                         🚀 Trusted by 10,000+ businesses
                     </div>
                 </div>
-                <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium text-center mt-6 text-gray-900 selection:bg-yellow-300 selection:text-black" style={{ zIndex: 10, position: "relative" }}>
+                <h1 className="hidden text-6xl md:text-7xl lg:text-8xl font-medium text-center mt-6 text-gray-900 selection:bg-yellow-300 selection:text-black" style={{ zIndex: 10, position: "relative" }}>
                     WhatsApp Business, <span className="text-cyan-600">simplified</span>
                 </h1>
-                <p className="selection:bg-yellow-300 selection:text-black text-center text-xl text-gray-600 mt-8 max-w-2xl mx-auto" style={{ zIndex: 10, position: "relative" }}>
+                <p className="hidden selection:bg-yellow-300 selection:text-black text-center text-xl text-gray-600 mt-8 max-w-2xl mx-auto" style={{ zIndex: 10, position: "relative" }}>
                     Streamline your WhatsApp business communications with powerful automation, analytics, and customer management tools.
                 </p>
-                <form className="mx-auto flex border border-gray-300 rounded-full gap-2 p-2 mt-8 max-w-lg bg-white shadow-sm" style={{ zIndex: 10, position: "relative" }}>
+                <form className="hidden mx-auto flex border border-gray-300 rounded-full gap-2 p-2 mt-8 max-w-lg bg-white shadow-sm" style={{ zIndex: 10, position: "relative" }}>
                     <input
                         type="email"
                         placeholder="Enter your email"
